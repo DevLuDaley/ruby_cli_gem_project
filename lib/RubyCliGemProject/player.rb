@@ -7,8 +7,8 @@ class RubyCliGemProject::Player
                   :player_salary, :player_url, :attributes, :player_object,
                   :player_headshot_small, :player_headshot_big,
                     :free_throw_percentage, :games_played, :field_goal_percentage,
-                    :three_point_field_goal_percentage,
-                    :rebounds_per_game, :Assists_per_game,
+                    :three_point_field_goal_percentage, :minutes_per_game,
+                    :rebounds_per_game, :assists_per_game,
                     :blocks_per_game,:Steals_per_game,
                     :turnovers_per_game, :points_per_game,
                    :tag_field_goal_percentage, :tag_three_point_field_goals_made_attempted_per_game,
@@ -17,8 +17,8 @@ class RubyCliGemProject::Player
                     :tag_free_throw_percentage, :tag_rebounds_per_game,
                     :tag_assists_per_game, :tag_blocks_per_game,
                     :tag_Steals_per_game, :tag_personal_fouls_per_game,
-                    :tag_turn_overs_per_game, :tag_points_per_game
-                    #:tag_games_played, :tag_minutes_per_game, :tag_field_goals_made_attempted_per_game,
+                    :tag_turn_overs_per_game, :tag_points_per_game,
+                    :tag_games_played, :tag_minutes_per_game, :tag_field_goals_made_attempted_per_game
 
 
 
@@ -68,20 +68,20 @@ class RubyCliGemProject::Player
           "yeah buddy!"
      end
 
-     def self.attributes
-        self.name
-        self.number
-        self.player_age
-     if self.player_college == nil
-        puts "No College"
-        self.player_height
-     if self.player_salary == nil
-        puts "No Salary"
-     end
-        self.player_url
-        self.player_weight
-        self.position
-     end
+    #  def self.attributes
+    #     self.name
+    #     self.number
+    #     self.player_age
+    #  if self.player_college == nil
+    #     puts "No College"
+    #     self.player_height
+    #  if self.player_salary == nil
+    #     puts "No Salary"
+    #  end
+    #     self.player_url
+    #     self.player_weight
+    #     self.position
+    #  end
 
 
         # def self.name
@@ -139,5 +139,5 @@ class RubyCliGemProject::Player
  #   end
 
   
-end
+#end
 end
