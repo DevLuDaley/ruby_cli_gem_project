@@ -157,3 +157,10 @@ def simple_changes
   puts 'Hey Git, you can you here now, right?'
 end
 
+def self.simple
+  puts "perhaps it just might be"
+end
+
+def yup
+  
+end
