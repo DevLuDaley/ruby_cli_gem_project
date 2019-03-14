@@ -152,12 +152,62 @@ RubyCliGemProject::Player.all
 
 end
 
-
-
-
-
-
-def big_changes
-  puts 'Hi Git, can you here me?'
+#hopefully changes are made
+def big_ole_changes
+  puts 'Hey Git, you can you here now, right?'
 end
+
+
+def big_ole_changes
+  puts 'Hey Git, you can you here now, right?'
+end
+
+def big_ole_changes
+  puts 'Hey Git, you can you here now, right?'
+end
+
+
+def big_ole_changes
+  puts 'Hey Git, you can you here now, right?'
+end
+
+def big_ole_changes
+  puts 'Hey Git, you can you here now, right?'
+end
+
+
+def big_ole_changes
+  puts 'Hey Git, you can you here now, right?'
+end
+
+def big_ole_changes
+  puts 'Hey Git, you can you here now, right?'
+end
+
+
+def big_ole_changes
+  puts 'Hey Git, you can you here now, right?'
+end
+
+def big_ole_changes
+  puts 'Hey Git, you can you here now, right?'
+end
+
+
+def big_ole_changes
+  puts 'Hey Git, you can you here now, right?'
+end
+
+
+
+
+              
+
+
+
+
+
+
+
+
 
