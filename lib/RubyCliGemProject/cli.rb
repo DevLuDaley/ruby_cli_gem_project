@@ -1,6 +1,6 @@
 #MVC #our controller
 #responsible for business logic/user interactions
-
+#require 'artii'
 
 class RubyCliGemProject::CLI
 
@@ -20,12 +20,24 @@ class RubyCliGemProject::CLI
   end
 
   def display_roster
-        puts "                                         " + "Here are Your ".colorize(:light_blue)
-        puts ""
-        puts "                                            " + "New York ".colorize(:light_blue)
-        puts ""
+      puts ""
+
+      
+
+a = Artii::Base.new
+a.asciify('           Here  Are  Your')
+puts a.asciify('             Here  Are  Your')
+
+b = Artii::Base.new
+b.asciify('                        NEW  YORK')
+puts b.asciify('                         New York')
+
+c = Artii::Base.new
+c.asciify('          *      KNICKS      *')
+puts c.asciify('               *      KNICKS      *')
+
         puts <<-'EOF'
-        puts ""
+        
                     _    _                                     __     __              
                     | |  | |                    /\              \ \   / /              
                     | |__| | ___ _ __ ___      /  \   _ __ ___   \ \_/ /__  _   _ _ __ 
@@ -152,4 +164,8 @@ class RubyCliGemProject::CLI
                                         #{player_obj.player_url}
                                         #{player_obj.player_headshot}".colorize(:green)
                     end
+
+def math(num)
+   num * 2 > 3
 end
+                end
