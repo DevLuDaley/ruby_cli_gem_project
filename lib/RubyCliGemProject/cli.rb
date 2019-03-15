@@ -105,18 +105,6 @@ class RubyCliGemProject::CLI
     def display_player(player_obj)
 
 #if player_obj.player_salary =  nil
-    
-
-
-#   else 
-#{player_obj.player_college} - #{player_obj.player_salary}
-
-
-            # player_object.points_per_game = page.css(".career").children[0] #=> #(Element:0x3fe8c34e8964 { name = "td", children = [ #(Text "4.3")] })
-            # player_object.assists_per_game = page.css(".career").children[1] #=> #(Element:0x3fe8c34e5df4 { name = "td", children = [ #(Text "2.0")] })
-            # player_object.rebounds_per_game = page.css(".career").children[2] #=> #(Element:0x3fe8c34e4cb0 { name = "td", children = [ #(Text "1.4")] })
-
-
             puts "
                                 #{player_obj.name} Number: #{player_obj.number}
                                 #{player_obj.position} - #{player_obj.player_height} -  #{player_obj.player_age} - #{player_obj.player_weight}
