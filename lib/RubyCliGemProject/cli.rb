@@ -103,32 +103,44 @@ class RubyCliGemProject::CLI
     end
 
     def display_player(player_obj)
-
-#if player_obj.player_salary =  nil
+        case goodbye
+            when player_obj.player_salary.to_i < 10
             puts "
                                 #{player_obj.name} Number: #{player_obj.number}
                                 #{player_obj.position} - #{player_obj.player_height} -  #{player_obj.player_age} - #{player_obj.player_weight}
+                                Player Salary: No Salary Player College: #{player_obj.player_college}
                                 Points Per Game: #{player_obj.points_per_game}
                                 Assists Per Game: #{player_obj.assists_per_game}
                                 Rebounds Per Game: #{player_obj.rebounds_per_game}
                                 #{player_obj.player_url}
                                 #{player_obj.player_headshot_big}
                                     ".colorize(:cyan)
-                                        #{player_obj.player_headshot}
-                                        #when 'more'
-                                        #   RubyCliGemProject::Scraper.player_scrape(RubyCliGemProject::Player.all[0])
-                                        #          puts " HERE'S MORE FOR YOU BUDDY!"
-                                        #puts "
-                                        #{RubyCliGemProject::Player.all[0].steals_per_game}
-                                        #{RubyCliGemProject::Player.all[0].games_played} #{RubyCliGemProject::Player.all[0].field_goal_percentage}
-                                        #" #{player_obj.player_headshot_big}
-                                        #{player_obj.free_throw_percentage} - #{player_obj.rebounds_per_gamey}
-                                        #{player_obj.assists_per_game} - #{player_obj.steals_per_game} -  #{player_obj.turnovers_per_game} - #{player_obj.points_per_game}
-                                        #{player_obj.three_point_field_goal_percentage}
-                                        #{player_obj.player_url}
-                                        #{player_obj.player_headshot}".colorize(:green)
-#binding.pry
+ 
+            when player_obj.player_college ==  "-"
+            puts "
+                                #{player_obj.name} Number: #{player_obj.number}
+                                #{player_obj.position} - #{player_obj.player_height} -  #{player_obj.player_age} - #{player_obj.player_weight}
+                                Player Salary: #{player_obj.player_salary} Player College: No College
+                                Points Per Game: #{player_obj.points_per_game}
+                                Assists Per Game: #{player_obj.assists_per_game}
+                                Rebounds Per Game: #{player_obj.rebounds_per_game}
+                                #{player_obj.player_url}
+                                #{player_obj.player_headshot_big}
+                                    ".colorize(:cyan)
+ 
+        else 
+            puts "
+                                #{player_obj.name} Number: #{player_obj.number}
+                                #{player_obj.position} - #{player_obj.player_height} -  #{player_obj.player_age} - #{player_obj.player_weight}
+                                Player Salary: #{player_obj.player_salary} Player College: #{player_obj.player_college}
+                                Points Per Game: #{player_obj.points_per_game}
+                                Assists Per Game: #{player_obj.assists_per_game}
+                                Rebounds Per Game: #{player_obj.rebounds_per_game}
+                                #{player_obj.player_url}
+                                #{player_obj.player_headshot_big}
+                                    ".colorize(:cyan)
+ binding.pry
                     end
-
-
+               # end
+            end
                 end
