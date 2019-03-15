@@ -103,43 +103,80 @@ class RubyCliGemProject::CLI
     end
 
     def display_player(player_obj)
-        case goodbye
-            when player_obj.player_salary.to_i < 10
+        #case goodbye
+
+
+
+
+              if player_obj.player_salary.include?('$') && player_obj.player_college != "-" 
             puts "
-                                #{player_obj.name} Number: #{player_obj.number}
-                                #{player_obj.position} - #{player_obj.player_height} -  #{player_obj.player_age} - #{player_obj.player_weight}
-                                Player Salary: No Salary Player College: #{player_obj.player_college}
+                                Name: #{player_obj.name} 
+                                Number: #{player_obj.number}
+                                Pos: #{player_obj.position} 
+                                Height: #{player_obj.player_height} 
+                                Weight: #{player_obj.player_weight}
+                                Age: #{player_obj.player_age}
+                                Player Salary: #{player_obj.player_salary} 
+                                Player College: #{player_obj.player_college}
                                 Points Per Game: #{player_obj.points_per_game}
                                 Assists Per Game: #{player_obj.assists_per_game}
                                 Rebounds Per Game: #{player_obj.rebounds_per_game}
-                                #{player_obj.player_url}
-                                #{player_obj.player_headshot_big}
+                                Player Url: #{player_obj.player_url}
+                                Player Photo: #{player_obj.player_headshot_big}
+                                    ".colorize(:cyan)
+
+              elsif player_obj.player_salary.include?('$') && player_obj.player_college == "-" 
+            puts "
+                                Name: #{player_obj.name} 
+                                Number: #{player_obj.number}
+                                Pos: #{player_obj.position} 
+                                Height: #{player_obj.player_height} 
+                                Weight: #{player_obj.player_weight}
+                                Age: #{player_obj.player_age}
+                                Player Salary: #{player_obj.player_salary} 
+                                Player College: No College
+                                Points Per Game: #{player_obj.points_per_game}
+                                Assists Per Game: #{player_obj.assists_per_game}
+                                Rebounds Per Game: #{player_obj.rebounds_per_game}
+                                Player Url: #{player_obj.player_url}
+                                Player Photo: #{player_obj.player_headshot_big}
+                                    ".colorize(:cyan)
+              elsif player_obj.player_salary.include?("-") && player_obj.player_college != "-" 
+                #player_obj.player_salary.to_i < 1
+            puts "
+                                Name: #{player_obj.name} 
+                                Number: #{player_obj.number}
+                                Pos: #{player_obj.position} 
+                                Height: #{player_obj.player_height} 
+                                Weight: #{player_obj.player_weight}
+                                Age: #{player_obj.player_age}
+                                Player Salary: No Salary
+                                Player College: #{player_obj.player_college}
+                                Points Per Game: #{player_obj.points_per_game}
+                                Assists Per Game: #{player_obj.assists_per_game}
+                                Rebounds Per Game: #{player_obj.rebounds_per_game}
+                                Player Url: #{player_obj.player_url}
+                                Player Photo: #{player_obj.player_headshot_big}
                                     ".colorize(:cyan)
  
-            when player_obj.player_college ==  "-"
+              elsif player_obj.player_salary.include?("-") && player_obj.player_college == "-" 
+#              elsif player_obj.player_college.to_i < 1
             puts "
-                                #{player_obj.name} Number: #{player_obj.number}
-                                #{player_obj.position} - #{player_obj.player_height} -  #{player_obj.player_age} - #{player_obj.player_weight}
-                                Player Salary: #{player_obj.player_salary} Player College: No College
+                                Name: #{player_obj.name} 
+                                Number: #{player_obj.number}
+                                Pos: #{player_obj.position} 
+                                Height: #{player_obj.player_height} 
+                                Weight: #{player_obj.player_weight}
+                                Age: #{player_obj.player_age}
+                                Player Salary: No Salary 
+                                Player College: No College
                                 Points Per Game: #{player_obj.points_per_game}
                                 Assists Per Game: #{player_obj.assists_per_game}
                                 Rebounds Per Game: #{player_obj.rebounds_per_game}
-                                #{player_obj.player_url}
-                                #{player_obj.player_headshot_big}
+                                Player Url: #{player_obj.player_url}
+                                Player Photo: #{player_obj.player_headshot_big}
                                     ".colorize(:cyan)
- 
-        else 
-            puts "
-                                #{player_obj.name} Number: #{player_obj.number}
-                                #{player_obj.position} - #{player_obj.player_height} -  #{player_obj.player_age} - #{player_obj.player_weight}
-                                Player Salary: #{player_obj.player_salary} Player College: #{player_obj.player_college}
-                                Points Per Game: #{player_obj.points_per_game}
-                                Assists Per Game: #{player_obj.assists_per_game}
-                                Rebounds Per Game: #{player_obj.rebounds_per_game}
-                                #{player_obj.player_url}
-                                #{player_obj.player_headshot_big}
-                                    ".colorize(:cyan)
- binding.pry
+ #binding.pry
                     end
                # end
             end
