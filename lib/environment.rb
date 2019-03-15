@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'pry'
 require 'colorize'
 require 'artii'
-#require 'artii'
+require 'rainbow'
 
 
 require_relative "./RubyCliGemProject/version"

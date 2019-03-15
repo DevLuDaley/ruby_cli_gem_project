@@ -43,5 +43,6 @@ Gem::Specification.new do |spec|
   
   spec.add_development_dependency "colorize"
   spec.add_development_dependency "artii"
+  spec.add_development_dependency "rainbow"
   spec.add_dependency "nokogiri"
 end

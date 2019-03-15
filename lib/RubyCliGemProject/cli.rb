@@ -1,97 +1,61 @@
 #MVC #our controller
 #responsible for business logic/user interactions
 #require 'artii'
-
+#require 'rainbow'
 class RubyCliGemProject::CLI
 
   def call
-        puts ""
-        puts "---------------------------------------------------------------------------------------------".colorize(:red)
+        puts ''
+        puts "---------------------------------------------------------------------------------------------------".colorize(:red)
         display_roster
-        puts ""
-        puts "---------------------------------------------------------------------------------------------".colorize(:blue)
+        puts ''
+        puts "---------------------------------------------------------------------------------------------------".colorize(:red)
         main_menu
-        puts ""
-        puts "---------------------------------------------------------------------------------------------".colorize(:red)
+        puts ''
+        puts "---------------------------------------------------------------------------------------------------".colorize(:red)
         goodbye
-        puts ""
-        puts "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^".colorize(:red)
-        puts ""
+        puts ''
+        puts "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^".colorize(:red)
+        puts ''
   end
 
   def display_roster
-      puts ""
+        puts ''
+        a = Artii::Base.new
+        a.asciify('           Here  Are  Your')#.colorize(:red)
+        puts a.asciify('                 Here  Are  Your').colorize(:cyan) #.background(:cyan)
 
-      
+        b = Artii::Base.new
+        b.asciify('                         New York')
+        puts b.asciify('                             New York').colorize(:cyan) #.background(:blue)
 
-a = Artii::Base.new
-a.asciify('           Here  Are  Your')
-puts a.asciify('             Here  Are  Your')
+        c = Artii::Base.new
+        c.asciify('          *    KNICKS    *')
+        puts c.asciify('                   *    KNICKS    *').colorize(:cyan)
+        puts "---------------------------------------------------------------------------------------------------".colorize(:red)
+        puts ''
 
-b = Artii::Base.new
-b.asciify('                        NEW  YORK')
-puts b.asciify('                         New York')
-
-c = Artii::Base.new
-c.asciify('          *      KNICKS      *')
-puts c.asciify('               *      KNICKS      *')
-
-        puts <<-'EOF'
-        
-                    _    _                                     __     __              
-                    | |  | |                    /\              \ \   / /              
-                    | |__| | ___ _ __ ___      /  \   _ __ ___   \ \_/ /__  _   _ _ __ 
-                    |  __  |/ _ \ '__/ _ \    / /\ \ | '__/ _ \   \   / _ \| | | | '__|
-                    | |  | |  __/ | |  __/   / ____ \| | |  __/    | | (_) | |_| | |   
-                    |_|  |_|\___|_|  \___|  /_/    \_\_|  \___|    |_|\___/ \__,_|_|   
-                                                                                            
-    EOF
-        puts <<-'EOF'
-        "   
-                            _   _                __     __        _    
-                            | \ | |               \ \   / /       | |   
-                            |  \| | _____      __  \ \_/ /__  _ __| | __
-                            | . ` |/ _ \ \ /\ / /   \   / _ \| '__| |/ /
-                            | |\  |  __/\ V  V /     | | (_) | |  |   < 
-                            |_| \_|\___| \_/\_/      |_|\___/|_|  |_|\_\
-                                                                        
-    EOF
-    puts ""
-        puts <<-'EOF'
-                        _        _  ___   _ _____ _____ _  __ _____        _    
-                    /\| |/\    | |/ / \ | |_   _/ ____| |/ // ____|    /\| |/\ 
-                    \ ` ' /    | ' /|  \| | | || |    | ' /| (___      \ ` ' / 
-                    |_     _|   |  < | . ` | | || |    |  <  \___ \    |_     _|
-                    / , . \    | . \| |\  |_| |_ |____| . \ ____) |    / , . \ 
-                    \/|_|\/    |_|\_\_| \_|_____\_____|_|\_\_____/     \/|_|\/ 
-                                                                                
-                                                             
-      "                                      
-    EOF
-        puts "---------------------------------------------------------------------------------------------".colorize(:red)
-        puts ""
         RubyCliGemProject::Scraper.get_page
         @ny_squad = RubyCliGemProject::Player.all
         @ny_squad.each.with_index(1) do |player, i|
-            puts "#{i}:".colorize(:blue) + " #{player.name}".colorize(:green)
-
+            puts "                                    #{i}:".colorize(:blue) + " #{player.name}".colorize(:cyan)
         end
      end
 
   def roster_encore
         #puts "                Here are your New York Knickerbockers!".colorize(:light_blue)
-        puts ""
-        puts "                           ::::::::::New York Knicks Roster::::::::::".colorize(:light_blue)
-        puts "---------------------------------------------------------------------------------------------".colorize(:red)
-        puts ""
+        puts ''
+        puts '                           ::::::::::New York Knicks Roster::::::::::'.colorize(:cyan)
+        puts "---------------------------------------------------------------------------------------------------".colorize(:red)
+        puts ''
         #@ny_squad = RubyCliGemProject::Player.all
         @ny_squad.each.with_index(1) do |player, i|
-            puts "#{i}:".colorize(:blue) + " #{player.name}".colorize(:green)
+            puts "                                    #{i}:".colorize(:blue) + " #{player.name}".colorize(:cyan)
             #binding.pry
         end
-        puts ""
-        puts "---------------------------------------------------------------------------------------------".colorize(:red)
-        puts ""
+        puts ''
+        puts "---------------------------------------------------------------------------------------------------".colorize(:red)
+        puts ''
   end
 
   def main_menu
@@ -102,14 +66,14 @@ puts c.asciify('               *      KNICKS      *')
         #input.colorize(:green)
 
         #puts <<-DOC.gsub /^\s*/, ''.colorize(:light_blue ) #.colorize( :background => :red)
-        puts "---------------------------------------------------------------------------------------------".colorize(:blue )
-        puts ""
-        puts "To see more info " + "type the number between 1 and #{RubyCliGemProject::Player.all.size} next to the " + 'player '.colorize(:green) + "you'd like to know more about." #.colorize(:blue ) #.colorize( :background => :light_blue)
+        puts "---------------------------------------------------------------------------------------------------".colorize(:red)
+        puts ''
+        puts "To see more info ".colorize(:blue) + "type the number between 1 and #{RubyCliGemProject::Player.all.size} next to the ".colorize(:blue) + 'player '.colorize(:cyan) + "you'd like to know more about.".colorize(:blue) #.colorize(:blue ) #.colorize( :background => :light_blue)
 
-        puts "To see team, " + "type " + 'roster '.colorize(:blue)  #.colorize(:blue ) #.on_red.underline
+        puts "To see team, type ".colorize(:blue) + 'roster '.colorize(:cyan)  #.colorize(:blue ) #.on_red.underline
 
-        puts  "To end program " + "type, " + 'exit'.colorize(:blue) #.blue.on_red.uncolorize
-        puts ""
+        puts  "To end program ".colorize(:blue) + "type, ".colorize(:blue) + 'exit'.colorize(:cyan) #.blue.on_red.uncolorize
+        puts ''
             #DOC
             input = gets.strip.downcase #.colorize(:red)
 
@@ -118,7 +82,6 @@ puts c.asciify('               *      KNICKS      *')
 
         case input #.to_i
           # if statemant to catch anything between 0-all length
-
 
         when *index_range
             input = input.to_i - 1
@@ -134,22 +97,54 @@ puts c.asciify('               *      KNICKS      *')
           end
 
           def goodbye
-            puts ""
-            puts "We know we're losing a ton of games right now but visit us often this off-season, things should get very interesting!"
+            puts ''
+            puts 'This hasn\'t been the season that we\'d hoped for but visit us often this off-season.'.colorize(:cyan)
+            puts 'Things should get very interesting!'.colorize(:cyan)
     end
 
     def display_player(player_obj)
 
+        if player_obj.player_college =  nil
             puts "
-                                        #{player_obj.name} #{player_obj.number}
-                                        #{player_obj.player_college} - #{player_obj.player_salary}
-                                        #{player_obj.position} - #{player_obj.player_height} -  #{player_obj.player_age} - #{player_obj.player_weight}
-                                        #{player_obj.tag_games_played}: #{player_obj.games_played}
-                                        #{player_obj.tag_points_per_game}: #{player_obj.points_per_game}
-                                        #{player_obj.tag_field_goal_percentage }: #{player_obj.field_goal_percentage}
-                                        #{player_obj.player_url}
-                                        #{player_obj.player_headshot_big}
-                                        ".colorize(:green)
+                                #{player_obj.name} 
+                                Number: #{player_obj.number}
+                                #{player_obj.player_college} - #{player_obj.player_salary}
+                                No College 
+                                - #{player_obj.player_salary}
+                                #{player_obj.position} - #{player_obj.player_height} -  #{player_obj.player_age} - #{player_obj.player_weight}
+                                #{player_obj.tag_games_played}: #{player_obj.games_played}
+                                #{player_obj.tag_points_per_game}: #{player_obj.points_per_game}
+                                #{player_obj.tag_field_goal_percentage}: #{player_obj.field_goal_percentage}
+                                #{player_obj.player_url}
+                                #{player_obj.player_headshot_big}
+                                    ".colorize(:cyan)
+        elsif player_obj.player_salary =  nil
+            puts "
+                                #{player_obj.name} 
+                                Number: #{player_obj.number}
+                                #{player_obj.player_college}
+                                No Salary
+                                #{player_obj.position} - #{player_obj.player_height} -  #{player_obj.player_age} - #{player_obj.player_weight}
+                                #{player_obj.tag_games_played}: #{player_obj.games_played}
+                                #{player_obj.tag_points_per_game}: #{player_obj.points_per_game}
+                                #{player_obj.tag_field_goal_percentage}: #{player_obj.field_goal_percentage}
+                                #{player_obj.player_url}
+                                #{player_obj.player_headshot_big}
+                                    ".colorize(:cyan)
+
+
+        else 
+            puts "
+                                #{player_obj.name} 
+                                Number: #{player_obj.number}
+                                #{player_obj.player_college} - #{player_obj.player_salary}
+                                #{player_obj.position} - #{player_obj.player_height} -  #{player_obj.player_age} - #{player_obj.player_weight}
+                                #{player_obj.tag_games_played}: #{player_obj.games_played}
+                                #{player_obj.tag_points_per_game}: #{player_obj.points_per_game}
+                                #{player_obj.tag_field_goal_percentage}: #{player_obj.field_goal_percentage}
+                                #{player_obj.player_url}
+                                #{player_obj.player_headshot_big}
+                                    ".colorize(:cyan)
                                         #{player_obj.player_headshot}
                                         #when 'more'
                                         #   RubyCliGemProject::Scraper.player_scrape(RubyCliGemProject::Player.all[0])
@@ -163,9 +158,9 @@ puts c.asciify('               *      KNICKS      *')
                                         #{player_obj.three_point_field_goal_percentage}
                                         #{player_obj.player_url}
                                         #{player_obj.player_headshot}".colorize(:green)
-                    end
 
-def math(num)
-   num * 2 > 3
-end
+
+                                        
+                    end
+                        end
                 end
