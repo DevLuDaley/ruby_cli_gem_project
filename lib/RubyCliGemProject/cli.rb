@@ -77,7 +77,7 @@ class RubyCliGemProject::CLI
             #DOC
             input = gets.strip.downcase #.colorize(:red)
 
-            index_range = Array(0..RubyCliGemProject::Player.all.length)
+            index_range = Array(1..RubyCliGemProject::Player.all.length)
             index_range.map!(&:to_s)
 
         case input #.to_i
@@ -104,44 +104,25 @@ class RubyCliGemProject::CLI
 
     def display_player(player_obj)
 
-        if player_obj.player_college =  nil
-            puts "
-                                #{player_obj.name} 
-                                Number: #{player_obj.number}
-                                #{player_obj.player_college} - #{player_obj.player_salary}
-                                No College 
-                                - #{player_obj.player_salary}
-                                #{player_obj.position} - #{player_obj.player_height} -  #{player_obj.player_age} - #{player_obj.player_weight}
-                                #{player_obj.tag_games_played}: #{player_obj.games_played}
-                                #{player_obj.tag_points_per_game}: #{player_obj.points_per_game}
-                                #{player_obj.tag_field_goal_percentage}: #{player_obj.field_goal_percentage}
-                                #{player_obj.player_url}
-                                #{player_obj.player_headshot_big}
-                                    ".colorize(:cyan)
-        elsif player_obj.player_salary =  nil
-            puts "
-                                #{player_obj.name} 
-                                Number: #{player_obj.number}
-                                #{player_obj.player_college}
-                                No Salary
-                                #{player_obj.position} - #{player_obj.player_height} -  #{player_obj.player_age} - #{player_obj.player_weight}
-                                #{player_obj.tag_games_played}: #{player_obj.games_played}
-                                #{player_obj.tag_points_per_game}: #{player_obj.points_per_game}
-                                #{player_obj.tag_field_goal_percentage}: #{player_obj.field_goal_percentage}
-                                #{player_obj.player_url}
-                                #{player_obj.player_headshot_big}
-                                    ".colorize(:cyan)
+#if player_obj.player_salary =  nil
+    
 
 
-        else 
+#   else 
+#{player_obj.player_college} - #{player_obj.player_salary}
+
+
+            # player_object.points_per_game = page.css(".career").children[0] #=> #(Element:0x3fe8c34e8964 { name = "td", children = [ #(Text "4.3")] })
+            # player_object.assists_per_game = page.css(".career").children[1] #=> #(Element:0x3fe8c34e5df4 { name = "td", children = [ #(Text "2.0")] })
+            # player_object.rebounds_per_game = page.css(".career").children[2] #=> #(Element:0x3fe8c34e4cb0 { name = "td", children = [ #(Text "1.4")] })
+
+
             puts "
-                                #{player_obj.name} 
-                                Number: #{player_obj.number}
-                                #{player_obj.player_college} - #{player_obj.player_salary}
+                                #{player_obj.name} Number: #{player_obj.number}
                                 #{player_obj.position} - #{player_obj.player_height} -  #{player_obj.player_age} - #{player_obj.player_weight}
-                                #{player_obj.tag_games_played}: #{player_obj.games_played}
-                                #{player_obj.tag_points_per_game}: #{player_obj.points_per_game}
-                                #{player_obj.tag_field_goal_percentage}: #{player_obj.field_goal_percentage}
+                                Points Per Game: #{player_obj.points_per_game}
+                                Assists Per Game: #{player_obj.assists_per_game}
+                                Rebounds Per Game: #{player_obj.rebounds_per_game}
                                 #{player_obj.player_url}
                                 #{player_obj.player_headshot_big}
                                     ".colorize(:cyan)
@@ -158,9 +139,8 @@ class RubyCliGemProject::CLI
                                         #{player_obj.three_point_field_goal_percentage}
                                         #{player_obj.player_url}
                                         #{player_obj.player_headshot}".colorize(:green)
-
-
-                                        
+#binding.pry
                     end
-                        end
+
+
                 end
