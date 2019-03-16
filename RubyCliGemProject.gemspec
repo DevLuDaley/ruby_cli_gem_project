@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["<lhdaley>"]
   spec.email         = ["<daleyluis@gmail.com>"]
 
-  spec.summary       = "app for scraping college baseball scores"
-  spec.description   = "app for scraping college baseball scores"
-  spec.homepage      = "https://github.com/hansenjl/baseball"
+  spec.summary       = "app for scraping espn knicks roster and player info"
+  spec.description   = "app for scraping espn knicks roster and player info"
+  spec.homepage      = "https://github.com/LHSharing/ruby_cli_gem_project"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -44,5 +44,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "colorize"
   spec.add_development_dependency "artii"
   spec.add_development_dependency "rainbow"
+  spec.add_development_dependency "byebug"
+  spec.add_development_dependency "pry-byebug"
+  spec.add_development_dependency "byebug-color-printer"
   spec.add_dependency "nokogiri"
 end

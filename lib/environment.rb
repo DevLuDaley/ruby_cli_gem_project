@@ -4,6 +4,10 @@ require 'pry'
 require 'colorize'
 require 'artii'
 require 'rainbow'
+require 'byebug'
+require 'pry-byebug'
+require 'byebug-color-printer'
+
 
 
 require_relative "./RubyCliGemProject/version"

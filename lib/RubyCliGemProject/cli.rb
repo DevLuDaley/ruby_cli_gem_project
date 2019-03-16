@@ -1,7 +1,5 @@
 #MVC #our controller
 #responsible for business logic/user interactions
-#require 'artii'
-#require 'rainbow'
 class RubyCliGemProject::CLI
 
   def call
