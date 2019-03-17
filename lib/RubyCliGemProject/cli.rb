@@ -46,7 +46,7 @@ class RubyCliGemProject::CLI
         puts '                           ::::::::::New York Knicks Roster::::::::::'.colorize(:cyan)
         puts "---------------------------------------------------------------------------------------------------".colorize(:red)
         puts ''
-        #@ny_squad = RubyCliGemProject::Player.all
+        @ny_squad = RubyCliGemProject::Player.all
         @ny_squad.each.with_index(1) do |player, i|
             puts "                                    #{i}:".colorize(:blue) + " #{player.name}".colorize(:cyan)
             #binding.pry
