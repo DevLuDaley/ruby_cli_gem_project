@@ -20,12 +20,12 @@ class RubyCliGemProject::CLI
   def display_roster
         puts ''
         a = Artii::Base.new
-        a.asciify('           Here  Are  Your')#.colorize(:red)
-        puts a.asciify('                 Here  Are  Your').colorize(:cyan) #.background(:cyan)
+        a.asciify('           Here  Are  Your')
+        puts a.asciify('                 Here  Are  Your').colorize(:cyan)
 
         b = Artii::Base.new
         b.asciify('                         New York')
-        puts b.asciify('                             New York').colorize(:cyan) #.background(:blue)
+        puts b.asciify('                             New York').colorize(:cyan)
 
         c = Artii::Base.new
         c.asciify('          *    KNICKS    *')
@@ -41,7 +41,6 @@ class RubyCliGemProject::CLI
      end
 
   def roster_encore
-        #puts "                Here are your New York Knickerbockers!".colorize(:light_blue)
         puts ''
         puts '                           ::::::::::New York Knicks Roster::::::::::'.colorize(:cyan)
         puts "---------------------------------------------------------------------------------------------------".colorize(:red)
@@ -49,7 +48,6 @@ class RubyCliGemProject::CLI
         @ny_squad = RubyCliGemProject::Player.all
         @ny_squad.each.with_index(1) do |player, i|
             puts "                                    #{i}:".colorize(:blue) + " #{player.name}".colorize(:cyan)
-            #binding.pry
         end
         puts ''
         puts "---------------------------------------------------------------------------------------------------".colorize(:red)
@@ -61,8 +59,7 @@ class RubyCliGemProject::CLI
         while input != "exit" #[[1..16], "exit", "roster"]
             #puts "Please enter a valid reply: i.e a number between 1 and #{RubyCliGemProject::Player.all.size} or roster or exit."
             puts "                          Please choose from the options listed below:".colorize(:blue) #.blue.on_green.blink
-        #input.colorize(:green)
-
+    
         #puts <<-DOC.gsub /^\s*/, ''.colorize(:light_blue ) #.colorize( :background => :red)
         puts "---------------------------------------------------------------------------------------------------".colorize(:red)
         puts ''
@@ -101,11 +98,6 @@ class RubyCliGemProject::CLI
     end
 
     def display_player(player_obj)
-        #case goodbye
-
-
-
-
               if player_obj.player_salary.include?('$') && player_obj.player_college != "-" 
             puts "
                                 Name: #{player_obj.name} 
@@ -174,8 +166,6 @@ class RubyCliGemProject::CLI
                                 Player Url: #{player_obj.player_url}
                                 Player Photo: #{player_obj.player_headshot_big}
                                     ".colorize(:cyan)
- #binding.pry
                     end
-               # end
             end
-                end
+end
