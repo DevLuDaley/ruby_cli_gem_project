@@ -1,8 +1,14 @@
 # RubyCliGemProject
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ruby_cli_gem_project`. To experiment with that code, run `bin/console` for an interactive prompt.
+Project Requirements
+Provide a CLI
+Your CLI application must provide access to data from a web page.
 
-TODO: Delete this and the text above, and describe your gem
+The data provided must go at least one level deep. A "level" is where a user can make a choice and then get detailed information about their choice.
+
+Use good OO design patterns. You should be creating a collection of objects, not hashes, to store your data. 
+
+***Pro Tip: Avoid scraping data more than once per web page - utilize objects you have already created. It will speed up your program!
 
 ## Installation
 
@@ -21,8 +27,10 @@ Or install it yourself as:
     $ gem install ruby_cli_gem_project
 
 ## Usage
-
-TODO: Write usage instructions here
+run the program
+select a number to see the corresponding player's stats.
+Either select a different player, enter 'roster' to see the team roster
+or enter "exit" to close the program.
 
 ## Development
 
