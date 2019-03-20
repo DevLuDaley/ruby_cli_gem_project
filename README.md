@@ -1,14 +1,16 @@
 # RubyCliGemProject
+Welcome to the nyk_roster CLI for my Flatiron School CLI project!
+
 
 Project Requirements
 Provide a CLI
-Your CLI application must provide access to data from a web page.
+*CLI application must provide access to data from a web page.
 
-The data provided must go at least one level deep. A "level" is where a user can make a choice and then get detailed information about their choice.
+*The data provided must go at least one level deep. A "level" is where a user can make a choice and then get detailed information about their choice.
 
-Use good OO design patterns. You should be creating a collection of objects, not hashes, to store your data. 
+*Use good OO design patterns. Create a collection of objects, not hashes, to store data.
 
-***Pro Tip: Avoid scraping data more than once per web page - utilize objects you have already created. It will speed up your program!
+***Pro Tip: Avoid scraping data more than once per web page - utilize objects that have already been created. It will speed up your program!
 
 ## Installation
 
@@ -27,10 +29,12 @@ Or install it yourself as:
     $ gem install ruby_cli_gem_project
 
 ## Usage
+
 run the program
 select a number to see the corresponding player's stats.
-Either select a different player, enter 'roster' to see the team roster
-or enter "exit" to close the program.
+Either 
+        enter a number to select a different player, enter 'roster' to see the team roster
+        or enter 'exit' to close the program.
 
 ## Development
 
@@ -40,7 +44,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/<github username>/ruby_cli_gem_project.
+Bug reports and pull requests are welcome on GitHub at https://github.com/<github lhsharing>/ruby_cli_gem_project.
 
 ## License
 

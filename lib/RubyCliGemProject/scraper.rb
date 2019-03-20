@@ -39,11 +39,13 @@ attr_accessor :knicks, :player_object, :page
 def self.player_scrape(player_object)
     page = Nokogiri::HTML(open(player_object.player_url))
     #(2nd scrape results below - orginal site - status changed to playr url)
-
-    player_object.points_per_game = page.css(".career").children[0].text #=> #(Element:0x3fe8c34e8964 { name = "td", children = [ #(Text "4.3")] })
-    player_object.assists_per_game = page.css(".career").children[1].text #=> #(Element:0x3fe8c34e5df4 { name = "td", children = [ #(Text "2.0")] })
-    player_object.rebounds_per_game = page.css(".career").children[2].text #=> #(Element:0x3fe8c34e4cb0 { name = "td", children = [ #(Text "1.4")] })
-
+    #binding.pry
+    player_object.points_per_game = page.css(".StatBlockInner").children[1].text #=> #(Element:0x3fe8c34e8964 { name = "td", children = [ #(Text "4.3")] })
+    
+    #player_object.points_per_game = page.css(".career").children[0].text #=> #(Element:0x3fe8c34e8964 { name = "td", children = [ #(Text "4.3")] })
+    #player_object.assists_per_game = page.css(".career").children[1].text #=> #(Element:0x3fe8c34e5df4 { name = "td", children = [ #(Text "2.0")] })
+    #player_object.rebounds_per_game = page.css(".career").children[2].text #=> #(Element:0x3fe8c34e4cb0 { name = "td", children = [ #(Text "1.4")] })
+    
     # player_object.games_played = page.css(".evenrow")[1].children[1].children.text
     # player_object.points_per_game = page.css(".evenrow")[1].children[6].text
     # player_object.field_goal_percentage = page.css(".evenrow")[1].children[4].text

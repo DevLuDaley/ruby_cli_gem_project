@@ -9,10 +9,5 @@ require "environment"
 
 RubyCliGemProject::CLI.new.call
 
-# in terminal enter "chmod +x (filename)" aka ruby_cli_gem
-#now
-# ruby bin/ruby_cli_gem
-#also equals
-# ./bin/ruby_cli_gem
 
 #puts "hello world, we back at it son!"

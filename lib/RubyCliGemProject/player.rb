@@ -48,6 +48,12 @@ class RubyCliGemProject::Player
         all.clear
     end
 
+def self.players_sub_ten_ppg(num)
+    #poor_scorers = []
+    Player.all.select {|scoring_player| scoring_player.points_per_game.to_f < num.to_f}
+    #poor_scorers << scoring_player
+end
+
         #should return message to test that .class methods.
     def self.today
         "yeah buddy!"

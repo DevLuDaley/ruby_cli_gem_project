@@ -1,5 +1,12 @@
 #MVC #our controller
 #responsible for business logic/user interactions
+
+
+# in terminal enter "chmod +x (filename)" aka ruby_cli_gem
+#now
+# ruby bin/ruby_cli_gem
+#also equals
+# ./bin/ruby_cli_gem
 class RubyCliGemProject::CLI
 
   def call
@@ -17,6 +24,8 @@ class RubyCliGemProject::CLI
         puts ''
   end
 
+
+  
   def display_roster
         puts ''
         a = Artii::Base.new
@@ -92,6 +101,7 @@ class RubyCliGemProject::CLI
           end
 
           def goodbye
+            binding.pry
             puts ''
             puts 'This hasn\'t been the season that we\'d hoped for but visit us often this off-season.'.colorize(:cyan)
             puts 'Things should get very interesting!'.colorize(:cyan)
